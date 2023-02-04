@@ -11,6 +11,12 @@ https://www.udemy.com/user/johnpbaugh/
 -----------
 
 
+
+Update 1.02: 2023-02-04
+
+Updated existing files to add more functionality to the program.
+
+
 Update 1.01: 2023-02-03
 
 The following new files have been added: Cleric.h, Cleric.cpp, Fighter.cpp, Fighter.h, MagicUser.cpp, MagicUser.h, Thief.cpp, and Thief.h. 
