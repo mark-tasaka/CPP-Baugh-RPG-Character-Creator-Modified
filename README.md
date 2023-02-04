@@ -10,6 +10,12 @@ https://www.udemy.com/user/johnpbaugh/
 
 -----------
 
+
+Update 1.01: 2023-02-03
+
+The following new files have been added: Cleric.h, Cleric.cpp, Fighter.cpp, Fighter.h, MagicUser.cpp, MagicUser.h, Thief.cpp, and Thief.h. 
+
+
 Initial commit: 2023-02-02
 
 The initial commit for the CPP Baugh RPG Character Creator Modified repository.
