@@ -1,6 +1,10 @@
 #include <iostream>
 #include <string>
-
+#include "Player.h"
+#include "Cleric.h"
+#include "Fighter.h"
+#include "MagicUser.h"
+#include "Thief.h"
 
 using namespace std;
 /*RPG Character Generator based on a project I worked on for

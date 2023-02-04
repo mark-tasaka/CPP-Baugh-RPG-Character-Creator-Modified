@@ -17,6 +17,9 @@ public:
 	string attack() const;
 
 private:
+	int hitPoints;
+	int magicPoints;
+	//string attack;
 };
 
 #endif // !THIEF_H
