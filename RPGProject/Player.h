@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
+//Abstract class
 
 //Enum for the Character Species
 enum Species {HUMAN, ELF, DWARF, HALF_ELF, HALFLING, HALF_ORC};

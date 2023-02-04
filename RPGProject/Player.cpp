@@ -23,7 +23,31 @@ Species Player::getSpecies() const
 
 string Player::whatRace() const
 {
-	return "species description";
+	if (race == 0)
+	{
+		return "Human";
+	}
+	else if (race == 1)
+	{
+		return "Elf";
+	}
+	else if (race == 2)
+	{
+		return "Dwarf";
+	}
+	else if (race == 3)
+	{
+		return "Half-Elf";
+	}
+	else if (race == 4)
+	{
+		return "Halfling";
+	}
+	else
+	{
+		return "Half-Orc";
+	}
+	//return "species description";
 }
 
 int Player::getHitPoints() const
@@ -48,10 +72,10 @@ void Player::setRace(Species race)
 
 void Player::setHitPoints(int hitPoints)
 {
-	this->magicPoints = magicPoints;
+	this->hitPoints = hitPoints;
 }
 
 void Player::setMagicPoints(int magicPoints)
 {
-
+	this->magicPoints = magicPoints;
 }
