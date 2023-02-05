@@ -18,6 +18,7 @@ int Thief::getHitPoints() const
 	return hitPoints;
 }
 
+
 void Thief::setMagicPoints(int magicPoints)
 {
 	this->magicPoints = magicPoints;

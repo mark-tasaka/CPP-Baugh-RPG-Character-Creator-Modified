@@ -16,6 +16,12 @@ Mark Tasaka
 
 int main()
 {
+	Thief* playerPtr = new Thief("Bob", HUMAN, 20, 10);
+
+	cout << "The Character's name is " << playerPtr->getName() << endl;
+	cout << "The Character race is " << playerPtr->whatRace() << endl;
+	cout << "Hit Points: " << playerPtr->getHitPoints() << " Magic Points: " << playerPtr->getMagicPoints() << endl;
+	cout << "Get Attack Message: " << playerPtr->attack() << endl;
 
 	return 0;
 }
