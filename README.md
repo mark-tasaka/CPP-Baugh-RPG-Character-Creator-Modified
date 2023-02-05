@@ -12,6 +12,11 @@ https://www.udemy.com/user/johnpbaugh/
 
 
 
+Update 1.03: 2023-02-05
+
+Updated existing files, and tested character creation.
+
+
 Update 1.02: 2023-02-04
 
 Updated existing files to add more functionality to the program.
