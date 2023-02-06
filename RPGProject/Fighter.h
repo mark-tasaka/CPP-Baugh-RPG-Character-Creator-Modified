@@ -9,17 +9,16 @@ using namespace std;
 class Fighter : public Player
 {
 public:
-	Fighter(string name, Species race, int hitPoints, int magicPoints);
-	void setHitPoints(int hitPoints);
-	int getHitPoints() const;
-	void setMagicPoints(int magicPoints);
-	int getMagicPoints() const;
-	string attack() const;
+	Fighter(string name, Species race) : Player(name, race, 20, 10)
+	{
 
-private:
-	int hitPoints;
-	int magicPoints;
-	//string attack;
+	}
+
+	string attack() const
+	{
+		return "I slay you will my sword!";
+	}
+
 };
 
 #endif // !FIGHTER_H

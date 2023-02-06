@@ -6,20 +6,19 @@
 #include "Player.h"
 using namespace std;
 
-class Thief: public Player
+class Thief : public Player
 {
 public:
-	Thief(string name, Species race, int hitPoints, int magicPoints);
-	void setHitPoints(int hitPoints);
-	int getHitPoints() const;
-	void setMagicPoints(int magicPoints); 
-	int getMagicPoints() const;
-	string attack() const;
+	Thief(string name, Species race) : Player(name, race, 20, 10)
+	{
 
-private:
-	int hitPoints;
-	int magicPoints;
-	//string attack;
+	}
+
+	string attack() const
+	{
+		return "I will backstab you will my sneak attack!";
+	}
+
 };
 
 #endif // !THIEF_H

@@ -23,31 +23,34 @@ Species Player::getSpecies() const
 
 string Player::whatRace() const
 {
-	if (race == 0)
+	string result = "";
+
+	if (race == HUMAN)
 	{
 		return "Human";
 	}
-	else if (race == 1)
+	else if (race == ELF)
 	{
 		return "Elf";
 	}
-	else if (race == 2)
+	else if (race == DWARF)
 	{
 		return "Dwarf";
 	}
-	else if (race == 3)
+	else if (race == HALF_ELF)
 	{
 		return "Half-Elf";
 	}
-	else if (race == 4)
+	else if (race == HALFLING)
 	{
 		return "Halfling";
 	}
-	else
+	else if(race == HALF_ORC)
 	{
 		return "Half-Orc";
 	}
-	//return "species description";
+
+	return result;
 }
 
 int Player::getHitPoints() const
