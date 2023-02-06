@@ -10,6 +10,9 @@ https://www.udemy.com/user/johnpbaugh/
 
 -----------
 
+Update 1.04: 2023-02-06
+
+Deleted files: Cleric.cpp, Fighter.cpp. MagicUser.cpp, and Thief.cpp.  Updated remaining files.
 
 
 Update 1.03: 2023-02-05
