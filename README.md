@@ -10,6 +10,11 @@ https://www.udemy.com/user/johnpbaugh/
 
 -----------
 
+Update 1.06: 2023-02-08
+
+Modified ability score generation method, by added the option to randomly generate Ability Scores using the 4d6 dice roll method, whereby the lowest die roll value is removed (i.e., roll 4d6, and add the three highest values).
+
+
 Update 1.05: 2023-02-07
 
 New files added: AbilityScores.cpp, and AbilityScores.h.  The ability to generate random ability scores, based on the 3d6 dice roll, has been added to the program.
