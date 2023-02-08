@@ -1,11 +1,16 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include<fstream>
+#include <iomanip>
+#include<ctime>
+#include<cstdlib>
 #include "Player.h"
 #include "Cleric.h"
 #include "Fighter.h"
 #include "MagicUser.h"
 #include "Thief.h"
+#include "AbilityScores.h"
 
 using namespace std;
 /*RPG Character Generator based on a project I worked on for
@@ -13,6 +18,8 @@ John P Baugh, Ph.D. 'The Complete C++ Developer Course (Udemy)
 Feb 2, 2023
 Mark Tasaka
 */
+
+void generateAbilityScores();
 
 void printMainMenu();
 void printRaceMenu();
@@ -25,11 +32,17 @@ void printAll(vector<Player*> playerList);
 
 int main()
 {
+	srand(time(0));
+
 	int choice;
 	int raceNum;
 	string playerName;
 
 	vector<Player*> playerList;
+
+	cout << "Welcome to the RPG character generator.  The first step is to generate ability scores" << endl << endl;
+
+	generateAbilityScores();
 
 	printMainMenu();
 
@@ -61,6 +74,20 @@ int main()
 	cout << "Program done" << endl;
 
 	return 0;
+}
+
+
+void generateAbilityScores()
+{
+	AbilityScores stats = AbilityScores();
+	array<int, 6> abilityScores = stats.generateAbilityScores();
+	cout << "Your character's ability scores are: " << endl << endl;
+	cout << "Strength: " << stats.getStrength(abilityScores) << endl;
+	cout << "Dexterity: " << stats.getDexterity(abilityScores) << endl;
+	cout << "Constitution: " << stats.getConstitution(abilityScores) << endl;
+	cout << "Intelligence: " << stats.getIntelligence(abilityScores) << endl;
+	cout << "Wisdom: " << stats.getWisdom(abilityScores) << endl;
+	cout << "Charisma: " << stats.getCharisma(abilityScores) << endl;
 }
 
 void printMainMenu()
