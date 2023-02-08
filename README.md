@@ -10,6 +10,11 @@ https://www.udemy.com/user/johnpbaugh/
 
 -----------
 
+Update 1.05: 2023-02-07
+
+New files added: AbilityScores.cpp, and AbilityScores.h.  The ability to generate random ability scores, based on the 3d6 dice roll, has been added to the program.
+
+
 Update 1.04: 2023-02-06
 
 Deleted files: Cleric.cpp, Fighter.cpp. MagicUser.cpp, and Thief.cpp.  Updated remaining files.
