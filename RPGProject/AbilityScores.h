@@ -9,7 +9,8 @@
 using namespace std;
 class AbilityScores {
 public:
-	array<int, 6> generateAbilityScores();
+	array<int, 6> generateAbilityScores(int dieRoll);
+	void dieRollMethod(int dieRoll) const;
 	int getStrength(array<int, 6> abilityScores);
 	int getDexterity(array<int, 6> abilityScores);
 	int getConstitution(array<int, 6> abilityScores);

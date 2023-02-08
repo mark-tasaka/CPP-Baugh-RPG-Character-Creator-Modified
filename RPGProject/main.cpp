@@ -19,7 +19,7 @@ Feb 2, 2023
 Mark Tasaka
 */
 
-void generateAbilityScores();
+//void generateAbilityScores();
 
 void printMainMenu();
 void printRaceMenu();
@@ -38,11 +38,63 @@ int main()
 	int raceNum;
 	string playerName;
 
+	int strength = 0;
+	int strengthMod = 0;
+	int dexterity = 0;
+	int dexterityMod = 0;
+	int constitution = 0;
+	int constitutionMod = 0;
+	int intelligence = 0;
+	int intelligenceMod = 0;
+	int wisdom = 0;
+	int wisdomMod = 0;
+	int charisma = 0;
+	int charismaMod = 0;
+
+	int dieRoll = 0;
+
+
 	vector<Player*> playerList;
 
-	cout << "Welcome to the RPG character generator.  The first step is to generate ability scores" << endl << endl;
+	cout << "Welcome to the RPG character generator.  The first step is to generate ability scores.  Please select which ability score generation method you would like to use." << endl << endl;
 
-	generateAbilityScores();
+	cout << "\t1 - Roll 3d6 (Old School method)" << endl;
+	cout << "\t2 - Roll 4d6, and drop the lowest die" << endl;
+
+	cin >> dieRoll;
+	cin.get(); //consume newline
+
+	while (!cin.good())
+	{
+		cin.clear();
+		cin.ignore();
+
+		cout << "Please enter an integer value" << endl;
+	}
+
+	while (dieRoll != 1 && dieRoll != 2)
+	{
+		cout << "Invalid number entered.  Please re-enter ability score generation method." << endl << endl;
+
+		cout << "\t1 - Roll 3d6 (Old School method)" << endl;
+		cout << "\t2 - Roll 4d6, and drop the lowest die" << endl;
+
+		cin >> dieRoll;
+		cin.get(); //consume newline
+	}
+
+	AbilityScores stats = AbilityScores();
+	array<int, 6> abilityScores = stats.generateAbilityScores(dieRoll);
+	cout << "Your character's ability scores are: " << endl << endl;
+	cout << "Strength: " << stats.getStrength(abilityScores) << endl;
+	cout << "Dexterity: " << stats.getDexterity(abilityScores) << endl;
+	cout << "Constitution: " << stats.getConstitution(abilityScores) << endl;
+	cout << "Intelligence: " << stats.getIntelligence(abilityScores) << endl;
+	cout << "Wisdom: " << stats.getWisdom(abilityScores) << endl;
+	cout << "Charisma: " << stats.getCharisma(abilityScores) << endl << endl;
+	stats.dieRollMethod(dieRoll);
+
+	//generateAbilityScores();
 
 	printMainMenu();
 
@@ -76,7 +128,7 @@ int main()
 	return 0;
 }
 
-
+/*
 void generateAbilityScores()
 {
 	AbilityScores stats = AbilityScores();
@@ -88,7 +140,7 @@ void generateAbilityScores()
 	cout << "Intelligence: " << stats.getIntelligence(abilityScores) << endl;
 	cout << "Wisdom: " << stats.getWisdom(abilityScores) << endl;
 	cout << "Charisma: " << stats.getCharisma(abilityScores) << endl;
-}
+}*/
 
 void printMainMenu()
 {
