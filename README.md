@@ -10,6 +10,11 @@ https://www.udemy.com/user/johnpbaugh/
 
 -----------
 
+Update 1.07: 2023-02-09
+
+Added the option of re-rolling ability scores, and begin work on implementing ability score modifiers.
+
+
 Update 1.06: 2023-02-08
 
 Modified ability score generation method, by added the option to randomly generate Ability Scores using the 4d6 dice roll method, whereby the lowest die roll value is removed (i.e., roll 4d6, and add the three highest values).
