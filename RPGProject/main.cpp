@@ -52,11 +52,14 @@ int main()
 	int charismaMod = 0;
 
 	int dieRoll = 0;
+	int reRoll = 0;
 
 
 	vector<Player*> playerList;
 
-	cout << "Welcome to the RPG character generator.  The first step is to generate ability scores.  Please select which ability score generation method you would like to use." << endl << endl;
+	cout << "Welcome to the RPG character generator.  The first step is to generate ability scores." <<endl; 
+		
+	cout<< "Please select which ability score generation method you would like to use." << endl << endl;
 
 	cout << "\t1 - Roll 3d6 (Old School method)" << endl;
 	cout << "\t2 - Roll 4d6, and drop the lowest die" << endl;
@@ -86,15 +89,66 @@ int main()
 	AbilityScores stats = AbilityScores();
 	array<int, 6> abilityScores = stats.generateAbilityScores(dieRoll);
 	cout << "Your character's ability scores are: " << endl << endl;
-	cout << "Strength: " << stats.getStrength(abilityScores) << endl;
+	cout << "Strength: " << stats.getStrength(abilityScores) << " " << stats.getStrengthMod() << endl;
 	cout << "Dexterity: " << stats.getDexterity(abilityScores) << endl;
 	cout << "Constitution: " << stats.getConstitution(abilityScores) << endl;
 	cout << "Intelligence: " << stats.getIntelligence(abilityScores) << endl;
 	cout << "Wisdom: " << stats.getWisdom(abilityScores) << endl;
 	cout << "Charisma: " << stats.getCharisma(abilityScores) << endl << endl;
 	stats.dieRollMethod(dieRoll);
+	
+	cout << endl;
 
-	//generateAbilityScores();
+	cout << "Would you like to keep these ability scores?  Enter 1 to re-roll ability scores.  Otherwise any another integer to keep these ability scores." << endl;
+
+	cin >> reRoll;
+	cin.get(); //consume newline
+
+	while (!cin.good())
+	{
+		cin.clear();
+		cin.ignore();
+
+		cout << "Please enter an integer value" << endl;
+	}
+
+	while (reRoll == 1)
+	{
+		array<int, 6> abilityScores = stats.generateAbilityScores(dieRoll);
+		cout << "Your character's ability scores are: " << endl << endl;
+		cout << "Strength: " << stats.getStrength(abilityScores) << " " << stats.getStrengthMod() << endl;
+		cout << "Dexterity: " << stats.getDexterity(abilityScores) << endl;
+		cout << "Constitution: " << stats.getConstitution(abilityScores) << endl;
+		cout << "Intelligence: " << stats.getIntelligence(abilityScores) << endl;
+		cout << "Wisdom: " << stats.getWisdom(abilityScores) << endl;
+		cout << "Charisma: " << stats.getCharisma(abilityScores) << endl << endl;
+		stats.dieRollMethod(dieRoll);
+
+
+		cout << "Enter 1 to re-roll ability scores, or enter another integer to keep these ability scores." << endl;
+
+		cin >> reRoll;
+		cin.get(); //consume newline
+
+		while (!cin.good())
+		{
+			cin.clear();
+			cin.ignore();
+
+			cout << "Please enter an integer value" << endl;
+		}
+
+		cout << endl;
+	}
+
+	cout << "Your ability scores are:" << endl;
+	cout << "\tStr " << stats.getStrength(abilityScores) << " " << stats.getStrengthMod() << endl;
+	cout << "\tDex " << stats.getDexterity(abilityScores) << endl;
+	cout << "\tCon " << stats.getConstitution(abilityScores) << endl;
+	cout << "\tInt " << stats.getIntelligence(abilityScores) << endl;
+	cout << "\tWis " << stats.getWisdom(abilityScores) << endl;
+	cout << "\tCha " << stats.getCharisma(abilityScores) << endl << endl;
+
 
 	printMainMenu();
 

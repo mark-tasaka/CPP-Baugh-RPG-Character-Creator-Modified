@@ -112,3 +112,45 @@ int AbilityScores::getCharisma(array<int, 6> abilityScores)
 	charisma = get<5>(abilityScores);
 	return charisma;
 }
+
+int AbilityScores::getStrengthMod()
+{
+	strengthMod = 0;
+
+	if (strength > 14)
+	{
+		strengthMod = 1;
+	}
+	else if (strength < 7)
+	{
+		strengthMod = -1;
+	}
+
+	return strengthMod;
+}
+
+/*
+int AbilityScores::getDexterityMod(array<int, 6> abilityScores)
+{
+
+}
+
+int AbilityScores::getConstitutionMod(array<int, 6> abilityScores)
+{
+
+}
+
+int AbilityScores::getIntelligenceMod(array<int, 6> abilityScores)
+{
+
+}
+
+int AbilityScores::getWisdomMod(array<int, 6> abilityScores)
+{
+
+}
+
+int AbilityScores::getCharismaMod(array<int, 6> abilityScores)
+{
+
+}*/
