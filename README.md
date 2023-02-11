@@ -10,6 +10,12 @@ https://www.udemy.com/user/johnpbaugh/
 
 -----------
 
+
+Update 1.09: 2023-02-11
+
+New files added: Race.cpp, and Race.h.  Updated main to add new features for character generation.
+
+
 Update 1.08: 2023-02-10
 
 Implemented the feature of assign ability score modifers for the ability scores.
