@@ -18,13 +18,13 @@ public:
 	int getIntelligence(array<int, 6> abilityScores);
 	int getWisdom(array<int, 6> abilityScores);
 	int getCharisma(array<int, 6> abilityScores);
-	int getStrengthMod();
-	/*
+	int getStrengthMod(array<int, 6> abilityScores);
 	int getDexterityMod(array<int, 6> abilityScores);
 	int getConstitutionMod(array<int, 6> abilityScores);
 	int getIntelligenceMod(array<int, 6> abilityScores);
 	int getWisdomMod(array<int, 6> abilityScores);
-	int getCharismaMod(array<int, 6> abilityScores);*/
+	int getCharismaMod(array<int, 6> abilityScores);
+	char getModifierSign(int modifier) const;
 
 private:
 	int strength;

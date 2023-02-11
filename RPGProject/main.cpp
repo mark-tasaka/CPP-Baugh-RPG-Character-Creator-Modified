@@ -88,13 +88,28 @@ int main()
 
 	AbilityScores stats = AbilityScores();
 	array<int, 6> abilityScores = stats.generateAbilityScores(dieRoll);
+	strength = stats.getStrength(abilityScores);
+	dexterity = stats.getDexterity(abilityScores);
+	constitution = stats.getConstitution(abilityScores);
+	intelligence = stats.getIntelligence(abilityScores);
+	wisdom = stats.getWisdom(abilityScores);
+	charisma = stats.getCharisma(abilityScores);
+
+	strengthMod = stats.getStrengthMod(abilityScores);
+	dexterityMod = stats.getDexterityMod(abilityScores);
+	constitutionMod = stats.getConstitutionMod(abilityScores);
+	intelligenceMod = stats.getIntelligenceMod(abilityScores);
+	wisdomMod = stats.getWisdomMod(abilityScores);
+	charismaMod = stats.getCharismaMod(abilityScores);
+
+
 	cout << "Your character's ability scores are: " << endl << endl;
-	cout << "Strength: " << stats.getStrength(abilityScores) << " " << stats.getStrengthMod() << endl;
-	cout << "Dexterity: " << stats.getDexterity(abilityScores) << endl;
-	cout << "Constitution: " << stats.getConstitution(abilityScores) << endl;
-	cout << "Intelligence: " << stats.getIntelligence(abilityScores) << endl;
-	cout << "Wisdom: " << stats.getWisdom(abilityScores) << endl;
-	cout << "Charisma: " << stats.getCharisma(abilityScores) << endl << endl;
+	cout << "Strength: " << strength << " " << stats.getModifierSign(strengthMod) << strengthMod <<  endl;
+	cout << "Dexterity: " << dexterity << " " << stats.getModifierSign(dexterityMod) << dexterityMod << endl;
+	cout << "Constitution: " << constitution << " " << stats.getModifierSign(constitutionMod) << constitutionMod << endl;
+	cout << "Intelligence: " << intelligence << " " << stats.getModifierSign(intelligenceMod) << intelligenceMod << endl;
+	cout << "Wisdom: " << wisdom << " " << stats.getModifierSign(wisdomMod) << wisdomMod << endl;
+	cout << "Charisma: " << charisma << " " << stats.getModifierSign(charismaMod) << charismaMod << endl;
 	stats.dieRollMethod(dieRoll);
 	
 	cout << endl;
@@ -115,13 +130,28 @@ int main()
 	while (reRoll == 1)
 	{
 		array<int, 6> abilityScores = stats.generateAbilityScores(dieRoll);
+		strength = stats.getStrength(abilityScores);
+		dexterity = stats.getDexterity(abilityScores);
+		constitution = stats.getConstitution(abilityScores);
+		intelligence = stats.getIntelligence(abilityScores);
+		wisdom = stats.getWisdom(abilityScores);
+		charisma = stats.getCharisma(abilityScores);
+
+		strengthMod = stats.getStrengthMod(abilityScores);
+		dexterityMod = stats.getDexterityMod(abilityScores);
+		constitutionMod = stats.getConstitutionMod(abilityScores);
+		intelligenceMod = stats.getIntelligenceMod(abilityScores);
+		wisdomMod = stats.getWisdomMod(abilityScores);
+		charismaMod = stats.getCharismaMod(abilityScores);
+
+
 		cout << "Your character's ability scores are: " << endl << endl;
-		cout << "Strength: " << stats.getStrength(abilityScores) << " " << stats.getStrengthMod() << endl;
-		cout << "Dexterity: " << stats.getDexterity(abilityScores) << endl;
-		cout << "Constitution: " << stats.getConstitution(abilityScores) << endl;
-		cout << "Intelligence: " << stats.getIntelligence(abilityScores) << endl;
-		cout << "Wisdom: " << stats.getWisdom(abilityScores) << endl;
-		cout << "Charisma: " << stats.getCharisma(abilityScores) << endl << endl;
+		cout << "Strength: " << strength << " " << stats.getModifierSign(strengthMod) << strengthMod << endl;
+		cout << "Dexterity: " << dexterity << " " << stats.getModifierSign(dexterityMod) << dexterityMod << endl;
+		cout << "Constitution: " << constitution << " " << stats.getModifierSign(constitutionMod) << constitutionMod << endl;
+		cout << "Intelligence: " << intelligence << " " << stats.getModifierSign(intelligenceMod) << intelligenceMod << endl;
+		cout << "Wisdom: " << wisdom << " " << stats.getModifierSign(wisdomMod) << wisdomMod << endl;
+		cout << "Charisma: " << charisma << " " << stats.getModifierSign(charismaMod) << charismaMod << endl;
 		stats.dieRollMethod(dieRoll);
 
 
@@ -141,13 +171,14 @@ int main()
 		cout << endl;
 	}
 
-	cout << "Your ability scores are:" << endl;
-	cout << "\tStr " << stats.getStrength(abilityScores) << " " << stats.getStrengthMod() << endl;
-	cout << "\tDex " << stats.getDexterity(abilityScores) << endl;
-	cout << "\tCon " << stats.getConstitution(abilityScores) << endl;
-	cout << "\tInt " << stats.getIntelligence(abilityScores) << endl;
-	cout << "\tWis " << stats.getWisdom(abilityScores) << endl;
-	cout << "\tCha " << stats.getCharisma(abilityScores) << endl << endl;
+
+	cout << "Your character's ability scores are: " << endl << endl;
+	cout << "\tStr: " << strength << " " << stats.getModifierSign(strengthMod) << strengthMod << endl;
+	cout << "\tDex: " << dexterity << " " << stats.getModifierSign(dexterityMod) << dexterityMod << endl;
+	cout << "\tCon: " << constitution << " " << stats.getModifierSign(constitutionMod) << constitutionMod << endl;
+	cout << "\tInt: " << intelligence << " " << stats.getModifierSign(intelligenceMod) << intelligenceMod << endl;
+	cout << "\tWis: " << wisdom << " " << stats.getModifierSign(wisdomMod) << wisdomMod << endl;
+	cout << "\tChar: " << charisma << " " << stats.getModifierSign(charismaMod) << charismaMod << endl;
 
 
 	printMainMenu();

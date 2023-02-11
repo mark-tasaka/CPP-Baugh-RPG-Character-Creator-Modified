@@ -83,38 +83,39 @@ int AbilityScores::getStrength(array<int, 6> abilityScores)
 	return strength;
 }
 
-int AbilityScores::getDexterity(array<int, 6> abilityScores)
+int AbilityScores::getDexterity(array<int, 6> abilityScores) 
 {
 	dexterity = get<1>(abilityScores);
 	return dexterity;
 }
 
-int AbilityScores::getConstitution(array<int, 6> abilityScores)
+int AbilityScores::getConstitution(array<int, 6> abilityScores) 
 {
 	constitution = get<2>(abilityScores);
 	return constitution;
 }
 
-int AbilityScores::getIntelligence(array<int, 6> abilityScores)
+int AbilityScores::getIntelligence(array<int, 6> abilityScores) 
 {
 	intelligence = get<3>(abilityScores);
 	return intelligence;
 }
 
-int AbilityScores::getWisdom(array<int, 6> abilityScores)
+int AbilityScores::getWisdom(array<int, 6> abilityScores) 
 {
 	wisdom = get<4>(abilityScores);
 	return wisdom;
 }
 
-int AbilityScores::getCharisma(array<int, 6> abilityScores)
+int AbilityScores::getCharisma(array<int, 6> abilityScores) 
 {
 	charisma = get<5>(abilityScores);
 	return charisma;
 }
 
-int AbilityScores::getStrengthMod()
+int AbilityScores::getStrengthMod(array<int, 6> abilityScores)
 {
+	strength = get<0>(abilityScores);
 	strengthMod = 0;
 
 	if (strength > 14)
@@ -129,28 +130,104 @@ int AbilityScores::getStrengthMod()
 	return strengthMod;
 }
 
-/*
 int AbilityScores::getDexterityMod(array<int, 6> abilityScores)
 {
+	dexterity = get<1>(abilityScores);
+	dexterityMod = 0;
+
+	if (dexterity > 14)
+	{
+		dexterityMod = 1;
+	}
+	else if (dexterity < 7)
+	{
+		dexterityMod = -1;
+	}
+
+	return dexterityMod;
 
 }
 
 int AbilityScores::getConstitutionMod(array<int, 6> abilityScores)
 {
+	constitution = get<2>(abilityScores);
+	constitutionMod = 0;
+
+	if (constitution > 14)
+	{
+		constitutionMod = 1;
+	}
+	else if (constitution < 7)
+	{
+		constitutionMod = -1;
+	}
+
+	return constitutionMod;
 
 }
 
 int AbilityScores::getIntelligenceMod(array<int, 6> abilityScores)
 {
+	intelligence = get<3>(abilityScores);
+	intelligenceMod = 0;
+
+	if (intelligence > 14)
+	{
+		intelligenceMod = 1;
+	}
+	else if (intelligence < 7)
+	{
+		intelligenceMod = -1;
+	}
+
+	return intelligenceMod;
 
 }
 
 int AbilityScores::getWisdomMod(array<int, 6> abilityScores)
 {
+	wisdom = get<4>(abilityScores);
+	wisdomMod = 0;
+
+	if (wisdom > 14)
+	{
+		wisdomMod = 1;
+	}
+	else if (wisdom < 7)
+	{
+		wisdomMod = -1;
+	}
+
+	return wisdomMod;
 
 }
 
 int AbilityScores::getCharismaMod(array<int, 6> abilityScores)
 {
+	charisma = get<5>(abilityScores);
+	charismaMod = 0;
 
-}*/
+	if (charisma > 14)
+	{
+		charismaMod = 1;
+	}
+	else if (charisma < 7)
+	{
+		charismaMod = -1;
+	}
+
+	return charismaMod;
+
+}
+
+char AbilityScores::getModifierSign(int modifier) const
+{
+	char signPlus = ' ';
+
+	if (modifier >= 0)
+	{
+		signPlus = '+';
+	}
+
+	return signPlus;
+}
