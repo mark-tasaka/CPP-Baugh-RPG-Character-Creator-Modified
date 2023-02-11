@@ -10,6 +10,11 @@ https://www.udemy.com/user/johnpbaugh/
 
 -----------
 
+Update 1.08: 2023-02-10
+
+Implemented the feature of assign ability score modifers for the ability scores.
+
+
 Update 1.07: 2023-02-09
 
 Added the option of re-rolling ability scores, and begin work on implementing ability score modifiers.
