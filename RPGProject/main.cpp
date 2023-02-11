@@ -11,6 +11,7 @@
 #include "MagicUser.h"
 #include "Thief.h"
 #include "AbilityScores.h"
+#include "Race.h"
 
 using namespace std;
 /*RPG Character Generator based on a project I worked on for
@@ -34,7 +35,7 @@ int main()
 {
 	srand(time(0));
 
-	int choice;
+	int nameChoice;
 	int raceNum;
 	string playerName;
 
@@ -57,8 +58,47 @@ int main()
 
 	vector<Player*> playerList;
 
-	cout << "Welcome to the RPG character generator.  The first step is to generate ability scores." <<endl; 
+	cout << "Welcome to the RPG character generator.  The first step is to come up with a name for your character." <<endl;
+
+	cout << "Please enter a name for your character." << endl;
+
+	getline(cin, playerName);
+
+	cout << "Your character's name is " << playerName << ". Are you statisfied with your character's names?  Press 1 if you would like to re-enter your character's name, or another integer if you want to keep the name." << endl;
+
+	cin >> nameChoice;
+	cin.get(); //consume newline
+
+	while (!cin.good())
+	{
+		cin.clear();
+		cin.ignore();
+
+		cout << "Please enter an integer value" << endl;
+	}
+
+	while (nameChoice == 1)
+	{
+		cout << "Please enter a name for your character." << endl;
+
+		getline(cin, playerName);
+
+		cout << "Your character's name is " << playerName << ".  Press 1 if you would like to re-enter your character's name, or another integer if you want to keep the name." << endl;
+
+		cin >> nameChoice;
+		cin.get(); //consume newline
+
+		while (!cin.good())
+		{
+			cin.clear();
+			cin.ignore();
+
+			cout << "Please enter an integer value" << endl;
+		}
+	}
 		
+	cout << "Now that you have selected your character's name (" << playerName << "), the next step is the generate ability scores for your character." << endl;
+
 	cout<< "Please select which ability score generation method you would like to use." << endl << endl;
 
 	cout << "\t1 - Roll 3d6 (Old School method)" << endl;
@@ -145,7 +185,7 @@ int main()
 		charismaMod = stats.getCharismaMod(abilityScores);
 
 
-		cout << "Your character's ability scores are: " << endl << endl;
+		cout << playerName << "'s ability scores are: " << endl << endl;
 		cout << "Strength: " << strength << " " << stats.getModifierSign(strengthMod) << strengthMod << endl;
 		cout << "Dexterity: " << dexterity << " " << stats.getModifierSign(dexterityMod) << dexterityMod << endl;
 		cout << "Constitution: " << constitution << " " << stats.getModifierSign(constitutionMod) << constitutionMod << endl;
@@ -171,8 +211,9 @@ int main()
 		cout << endl;
 	}
 
+	cout << endl;
 
-	cout << "Your character's ability scores are: " << endl << endl;
+	cout << playerName << "'s ability scores are: " << endl << endl;
 	cout << "\tStr: " << strength << " " << stats.getModifierSign(strengthMod) << strengthMod << endl;
 	cout << "\tDex: " << dexterity << " " << stats.getModifierSign(dexterityMod) << dexterityMod << endl;
 	cout << "\tCon: " << constitution << " " << stats.getModifierSign(constitutionMod) << constitutionMod << endl;
@@ -181,6 +222,7 @@ int main()
 	cout << "\tChar: " << charisma << " " << stats.getModifierSign(charismaMod) << charismaMod << endl;
 
 
+	/*
 	printMainMenu();
 
 	cin >> choice;
@@ -209,23 +251,11 @@ int main()
 	doCleanUp(playerList);
 
 	cout << "Program done" << endl;
+	*/
 
 	return 0;
 }
 
-/*
-void generateAbilityScores()
-{
-	AbilityScores stats = AbilityScores();
-	array<int, 6> abilityScores = stats.generateAbilityScores();
-	cout << "Your character's ability scores are: " << endl << endl;
-	cout << "Strength: " << stats.getStrength(abilityScores) << endl;
-	cout << "Dexterity: " << stats.getDexterity(abilityScores) << endl;
-	cout << "Constitution: " << stats.getConstitution(abilityScores) << endl;
-	cout << "Intelligence: " << stats.getIntelligence(abilityScores) << endl;
-	cout << "Wisdom: " << stats.getWisdom(abilityScores) << endl;
-	cout << "Charisma: " << stats.getCharisma(abilityScores) << endl;
-}*/
 
 void printMainMenu()
 {
