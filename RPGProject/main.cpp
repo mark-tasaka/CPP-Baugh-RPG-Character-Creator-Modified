@@ -22,14 +22,14 @@ Mark Tasaka
 
 //void generateAbilityScores();
 
-void printMainMenu();
-void printRaceMenu();
-
-Player* createPlayer(string playerName, int typeNum, int raceNum);
-void doCleanUp(vector<Player*> playerList);
-Species getRace(int raceNum);
-
-void printAll(vector<Player*> playerList);
+//void printMainMenu();
+//void printRaceMenu();
+//
+//Player* createPlayer(string playerName, int typeNum, int raceNum);
+//void doCleanUp(vector<Player*> playerList);
+//Species getRace(int raceNum);
+//
+//void printAll(vector<Player*> playerList);
 
 int main()
 {
@@ -64,6 +64,8 @@ int main()
 
 	getline(cin, playerName);
 
+	cout << endl;
+
 	cout << "Your character's name is " << playerName << ". Are you statisfied with your character's names?  Press 1 if you would like to re-enter your character's name, or another integer if you want to keep the name." << endl;
 
 	cin >> nameChoice;
@@ -96,6 +98,8 @@ int main()
 			cout << "Please enter an integer value" << endl;
 		}
 	}
+
+	cout << endl;
 		
 	cout << "Now that you have selected your character's name (" << playerName << "), the next step is the generate ability scores for your character." << endl;
 
@@ -256,102 +260,102 @@ int main()
 	return 0;
 }
 
-
-void printMainMenu()
-{
-	cout << endl;
-	cout << "Which of the following would you like?" << endl;
-	cout << "\t1 - Create a Fighter" << endl;
-	cout << "\t2 - Create a Cleric" << endl;
-	cout << "\t3 - Create a Magic-User" << endl;
-	cout << "\t4 - Create a Thief" << endl;
-	cout << "\t0 - Finish creating player characters" << endl;
-}
-
-void printRaceMenu()
-{
-	cout << "Now, which race do you want?" << endl;
-	cout << "\t1 - Human" << endl;
-	cout << "\t2 - Elf" << endl;
-	cout << "\t3 - Dwarf" << endl;
-	cout << "\t4 - Half-Elf" << endl;
-	cout << "\t5 - Halfling" << endl;
-	cout << "\t6 - Half-Orc" << endl;
-}
-
-Player* createPlayer(string playerName, int typeNum, int raceNum)
-{
-	Species playerRace = getRace(raceNum);
-
-	Player* tempPlayer = nullptr;
-
-	if (typeNum == 1)
-	{
-		tempPlayer = new Fighter(playerName, playerRace);
-	}
-	else if (typeNum == 2)
-	{
-		tempPlayer = new Cleric(playerName, playerRace);
-	}
-	else if (typeNum == 3)
-	{
-		tempPlayer = new MagicUser(playerName, playerRace);
-	}
-	else if (typeNum == 4)
-	{
-		tempPlayer = new Thief(playerName, playerRace);
-	}
-
-	return tempPlayer;
-}
-
-void doCleanUp(vector<Player*> playerList)
-{
-	for (Player* player : playerList)
-	{
-		delete player;
-	}
-	playerList.clear();
-}
-
-Species getRace(int raceNum)
-{
-	Species race;
-
-	if (raceNum == 1)
-	{
-		race = HUMAN;
-	}
-	else if (raceNum == 2)
-	{
-		race = ELF;
-	}
-	else if (raceNum == 3)
-	{
-		race = DWARF;
-	}
-	else if (raceNum == 4)
-	{
-		race = HALF_ELF;
-	}
-	else if (raceNum == 5)
-	{
-		race = HALFLING;
-	}
-	else if (raceNum == 6)
-	{
-		race = HALF_ORC;
-	}
-
-	return race;
-}
-
-void printAll(vector<Player*> playerList)
-{
-	for (Player* player : playerList)
-	{
-		cout << player->getName() << ": I am a " << player->whatRace() << " and my attack is: " << player->attack() << endl;
-
-		//cout << "I am a " << player->whatRace() << " and my attack is: " << player->attack() << endl;
-	}
-}
+//
+//void printMainMenu()
+//{
+//	cout << endl;
+//	cout << "Which of the following would you like?" << endl;
+//	cout << "\t1 - Create a Fighter" << endl;
+//	cout << "\t2 - Create a Cleric" << endl;
+//	cout << "\t3 - Create a Magic-User" << endl;
+//	cout << "\t4 - Create a Thief" << endl;
+//	cout << "\t0 - Finish creating player characters" << endl;
+//}
+//
+//void printRaceMenu()
+//{
+//	cout << "Now, which race do you want?" << endl;
+//	cout << "\t1 - Human" << endl;
+//	cout << "\t2 - Elf" << endl;
+//	cout << "\t3 - Dwarf" << endl;
+//	cout << "\t4 - Half-Elf" << endl;
+//	cout << "\t5 - Halfling" << endl;
+//	cout << "\t6 - Half-Orc" << endl;
+//}
+//
+//Player* createPlayer(string playerName, int typeNum, int raceNum)
+//{
+//	Species playerRace = getRace(raceNum);
+//
+//	Player* tempPlayer = nullptr;
+//
+//	if (typeNum == 1)
+//	{
+//		tempPlayer = new Fighter(playerName, playerRace);
+//	}
+//	else if (typeNum == 2)
+//	{
+//		tempPlayer = new Cleric(playerName, playerRace);
+//	}
+//	else if (typeNum == 3)
+//	{
+//		tempPlayer = new MagicUser(playerName, playerRace);
+//	}
+//	else if (typeNum == 4)
+//	{
+//		tempPlayer = new Thief(playerName, playerRace);
+//	}
+//
+//	return tempPlayer;
+//}
+//
+//void doCleanUp(vector<Player*> playerList)
+//{
+//	for (Player* player : playerList)
+//	{
+//		delete player;
+//	}
+//	playerList.clear();
+//}
+//
+//Species getRace(int raceNum)
+//{
+//	Species race;
+//
+//	if (raceNum == 1)
+//	{
+//		race = HUMAN;
+//	}
+//	else if (raceNum == 2)
+//	{
+//		race = ELF;
+//	}
+//	else if (raceNum == 3)
+//	{
+//		race = DWARF;
+//	}
+//	else if (raceNum == 4)
+//	{
+//		race = HALF_ELF;
+//	}
+//	else if (raceNum == 5)
+//	{
+//		race = HALFLING;
+//	}
+//	else if (raceNum == 6)
+//	{
+//		race = HALF_ORC;
+//	}
+//
+//	return race;
+//}
+//
+//void printAll(vector<Player*> playerList)
+//{
+//	for (Player* player : playerList)
+//	{
+//		cout << player->getName() << ": I am a " << player->whatRace() << " and my attack is: " << player->attack() << endl;
+//
+//		//cout << "I am a " << player->whatRace() << " and my attack is: " << player->attack() << endl;
+//	}
+//}

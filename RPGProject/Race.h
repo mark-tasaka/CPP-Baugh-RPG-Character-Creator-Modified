@@ -6,7 +6,8 @@ using namespace std;
 
 class Race {
 public:
-	Race (int choice);
+	string getRace(int choice) const;
+	string getRaceAbilities(int choice) const;
 
 private:
 	string race;

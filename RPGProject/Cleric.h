@@ -9,15 +9,15 @@ using namespace std;
 class Cleric : public Player
 {
 public:
-	Cleric(string name, Species race) : Player(name, race, 20, 10)
-	{
+	//Cleric(string name, Species race) : Player(name, race, 20, 10)
+	//{
 
-	}
+	//}
 
-	string attack() const
-	{
-		return "I will smite you with my holy wrath";
-	}
+	//string attack() const
+	//{
+	//	return "I will smite you with my holy wrath";
+	//}
 
 };
 

@@ -8,16 +8,16 @@ using namespace std;
 
 class Thief : public Player
 {
-public:
-	Thief(string name, Species race) : Player(name, race, 20, 10)
-	{
-
-	}
-
-	string attack() const
-	{
-		return "I will backstab you will my sneak attack!";
-	}
+//public:
+//	Thief(string name, Species race) : Player(name, race, 20, 10)
+//	{
+//
+//	}
+//
+//	string attack() const
+//	{
+//		return "I will backstab you will my sneak attack!";
+//	}
 
 };
 
