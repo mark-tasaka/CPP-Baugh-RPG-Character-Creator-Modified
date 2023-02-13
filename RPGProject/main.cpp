@@ -54,6 +54,7 @@ int main()
 
 	int dieRoll = 0;
 	int reRoll = 0;
+	int raceChoice = 0;
 
 
 	vector<Player*> playerList;
@@ -224,6 +225,11 @@ int main()
 	cout << "\tInt: " << intelligence << " " << stats.getModifierSign(intelligenceMod) << intelligenceMod << endl;
 	cout << "\tWis: " << wisdom << " " << stats.getModifierSign(wisdomMod) << wisdomMod << endl;
 	cout << "\tChar: " << charisma << " " << stats.getModifierSign(charismaMod) << charismaMod << endl;
+
+	Race characterRace = Race();
+
+	characterRace.raceDescription();
+
 
 
 	/*
