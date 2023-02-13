@@ -10,6 +10,11 @@ https://www.udemy.com/user/johnpbaugh/
 
 -----------
 
+Update 1.11: 2023-02-13
+
+Updated existing code to add more functionality.
+
+
 Update 1.10: 2023-02-12
 
 Updated files to set the ground work for any more functionality to the program.
