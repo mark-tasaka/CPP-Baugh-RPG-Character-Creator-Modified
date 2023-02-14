@@ -5,6 +5,7 @@
 #include <iomanip>
 #include<ctime>
 #include<cstdlib>
+#include <memory>
 #include "Player.h"
 #include "Cleric.h"
 #include "Fighter.h"
@@ -59,7 +60,7 @@ int main()
 
 	vector<Player*> playerList;
 
-	cout << "Welcome to the RPG character generator.  The first step is to come up with a name for your character." <<endl;
+	cout << "Welcome to the RPG character generator.  The first step is to come up with a name for your character." << endl;
 
 	cout << "Please enter a name for your character." << endl;
 
@@ -101,10 +102,10 @@ int main()
 	}
 
 	cout << endl;
-		
+
 	cout << "Now that you have selected your character's name (" << playerName << "), the next step is the generate ability scores for your character." << endl;
 
-	cout<< "Please select which ability score generation method you would like to use." << endl << endl;
+	cout << "Please select which ability score generation method you would like to use." << endl << endl;
 
 	cout << "\t1 - Roll 3d6 (Old School method)" << endl;
 	cout << "\t2 - Roll 4d6, and drop the lowest die" << endl;
@@ -131,32 +132,34 @@ int main()
 		cin.get(); //consume newline
 	}
 
-	AbilityScores stats = AbilityScores();
-	array<int, 6> abilityScores = stats.generateAbilityScores(dieRoll);
-	strength = stats.getStrength(abilityScores);
-	dexterity = stats.getDexterity(abilityScores);
-	constitution = stats.getConstitution(abilityScores);
-	intelligence = stats.getIntelligence(abilityScores);
-	wisdom = stats.getWisdom(abilityScores);
-	charisma = stats.getCharisma(abilityScores);
+	//AbilityScores stats = AbilityScores();
+	//Smart Pointer
+	unique_ptr<AbilityScores> stats = make_unique<AbilityScores>();
+	array<int, 6> abilityScores = stats->generateAbilityScores(dieRoll);
+	strength = stats->getStrength(abilityScores);
+	dexterity = stats->getDexterity(abilityScores);
+	constitution = stats->getConstitution(abilityScores);
+	intelligence = stats->getIntelligence(abilityScores);
+	wisdom = stats->getWisdom(abilityScores);
+	charisma = stats->getCharisma(abilityScores);
 
-	strengthMod = stats.getStrengthMod(abilityScores);
-	dexterityMod = stats.getDexterityMod(abilityScores);
-	constitutionMod = stats.getConstitutionMod(abilityScores);
-	intelligenceMod = stats.getIntelligenceMod(abilityScores);
-	wisdomMod = stats.getWisdomMod(abilityScores);
-	charismaMod = stats.getCharismaMod(abilityScores);
+	strengthMod = stats->getStrengthMod(abilityScores);
+	dexterityMod = stats->getDexterityMod(abilityScores);
+	constitutionMod = stats->getConstitutionMod(abilityScores);
+	intelligenceMod = stats->getIntelligenceMod(abilityScores);
+	wisdomMod = stats->getWisdomMod(abilityScores);
+	charismaMod = stats->getCharismaMod(abilityScores);
 
 
 	cout << "Your character's ability scores are: " << endl << endl;
-	cout << "Strength: " << strength << " " << stats.getModifierSign(strengthMod) << strengthMod <<  endl;
-	cout << "Dexterity: " << dexterity << " " << stats.getModifierSign(dexterityMod) << dexterityMod << endl;
-	cout << "Constitution: " << constitution << " " << stats.getModifierSign(constitutionMod) << constitutionMod << endl;
-	cout << "Intelligence: " << intelligence << " " << stats.getModifierSign(intelligenceMod) << intelligenceMod << endl;
-	cout << "Wisdom: " << wisdom << " " << stats.getModifierSign(wisdomMod) << wisdomMod << endl;
-	cout << "Charisma: " << charisma << " " << stats.getModifierSign(charismaMod) << charismaMod << endl;
-	stats.dieRollMethod(dieRoll);
-	
+	cout << "Strength: " << strength << " " << stats->getModifierSign(strengthMod) << strengthMod << endl;
+	cout << "Dexterity: " << dexterity << " " << stats->getModifierSign(dexterityMod) << dexterityMod << endl;
+	cout << "Constitution: " << constitution << " " << stats->getModifierSign(constitutionMod) << constitutionMod << endl;
+	cout << "Intelligence: " << intelligence << " " << stats->getModifierSign(intelligenceMod) << intelligenceMod << endl;
+	cout << "Wisdom: " << wisdom << " " << stats->getModifierSign(wisdomMod) << wisdomMod << endl;
+	cout << "Charisma: " << charisma << " " << stats->getModifierSign(charismaMod) << charismaMod << endl;
+	stats->dieRollMethod(dieRoll);
+
 	cout << endl;
 
 	cout << "Would you like to keep these ability scores?  Enter 1 to re-roll ability scores.  Otherwise any another integer to keep these ability scores." << endl;
@@ -174,30 +177,30 @@ int main()
 
 	while (reRoll == 1)
 	{
-		array<int, 6> abilityScores = stats.generateAbilityScores(dieRoll);
-		strength = stats.getStrength(abilityScores);
-		dexterity = stats.getDexterity(abilityScores);
-		constitution = stats.getConstitution(abilityScores);
-		intelligence = stats.getIntelligence(abilityScores);
-		wisdom = stats.getWisdom(abilityScores);
-		charisma = stats.getCharisma(abilityScores);
+		array<int, 6> abilityScores = stats->generateAbilityScores(dieRoll);
+		strength = stats->getStrength(abilityScores);
+		dexterity = stats->getDexterity(abilityScores);
+		constitution = stats->getConstitution(abilityScores);
+		intelligence = stats->getIntelligence(abilityScores);
+		wisdom = stats->getWisdom(abilityScores);
+		charisma = stats->getCharisma(abilityScores);
 
-		strengthMod = stats.getStrengthMod(abilityScores);
-		dexterityMod = stats.getDexterityMod(abilityScores);
-		constitutionMod = stats.getConstitutionMod(abilityScores);
-		intelligenceMod = stats.getIntelligenceMod(abilityScores);
-		wisdomMod = stats.getWisdomMod(abilityScores);
-		charismaMod = stats.getCharismaMod(abilityScores);
+		strengthMod = stats->getStrengthMod(abilityScores);
+		dexterityMod = stats->getDexterityMod(abilityScores);
+		constitutionMod = stats->getConstitutionMod(abilityScores);
+		intelligenceMod = stats->getIntelligenceMod(abilityScores);
+		wisdomMod = stats->getWisdomMod(abilityScores);
+		charismaMod = stats->getCharismaMod(abilityScores);
 
 
 		cout << playerName << "'s ability scores are: " << endl << endl;
-		cout << "Strength: " << strength << " " << stats.getModifierSign(strengthMod) << strengthMod << endl;
-		cout << "Dexterity: " << dexterity << " " << stats.getModifierSign(dexterityMod) << dexterityMod << endl;
-		cout << "Constitution: " << constitution << " " << stats.getModifierSign(constitutionMod) << constitutionMod << endl;
-		cout << "Intelligence: " << intelligence << " " << stats.getModifierSign(intelligenceMod) << intelligenceMod << endl;
-		cout << "Wisdom: " << wisdom << " " << stats.getModifierSign(wisdomMod) << wisdomMod << endl;
-		cout << "Charisma: " << charisma << " " << stats.getModifierSign(charismaMod) << charismaMod << endl;
-		stats.dieRollMethod(dieRoll);
+		cout << "Strength: " << strength << " " << stats->getModifierSign(strengthMod) << strengthMod << endl;
+		cout << "Dexterity: " << dexterity << " " << stats->getModifierSign(dexterityMod) << dexterityMod << endl;
+		cout << "Constitution: " << constitution << " " << stats->getModifierSign(constitutionMod) << constitutionMod << endl;
+		cout << "Intelligence: " << intelligence << " " << stats->getModifierSign(intelligenceMod) << intelligenceMod << endl;
+		cout << "Wisdom: " << wisdom << " " << stats->getModifierSign(wisdomMod) << wisdomMod << endl;
+		cout << "Charisma: " << charisma << " " << stats->getModifierSign(charismaMod) << charismaMod << endl;
+		stats->dieRollMethod(dieRoll);
 
 
 		cout << "Enter 1 to re-roll ability scores, or enter another integer to keep these ability scores." << endl;
@@ -219,12 +222,12 @@ int main()
 	cout << endl;
 
 	cout << playerName << "'s ability scores are: " << endl << endl;
-	cout << "\tStr: " << strength << " " << stats.getModifierSign(strengthMod) << strengthMod << endl;
-	cout << "\tDex: " << dexterity << " " << stats.getModifierSign(dexterityMod) << dexterityMod << endl;
-	cout << "\tCon: " << constitution << " " << stats.getModifierSign(constitutionMod) << constitutionMod << endl;
-	cout << "\tInt: " << intelligence << " " << stats.getModifierSign(intelligenceMod) << intelligenceMod << endl;
-	cout << "\tWis: " << wisdom << " " << stats.getModifierSign(wisdomMod) << wisdomMod << endl;
-	cout << "\tChar: " << charisma << " " << stats.getModifierSign(charismaMod) << charismaMod << endl;
+	cout << "\tStr: " << strength << " " << stats->getModifierSign(strengthMod) << strengthMod << endl;
+	cout << "\tDex: " << dexterity << " " << stats->getModifierSign(dexterityMod) << dexterityMod << endl;
+	cout << "\tCon: " << constitution << " " << stats->getModifierSign(constitutionMod) << constitutionMod << endl;
+	cout << "\tInt: " << intelligence << " " << stats->getModifierSign(intelligenceMod) << intelligenceMod << endl;
+	cout << "\tWis: " << wisdom << " " << stats->getModifierSign(wisdomMod) << wisdomMod << endl;
+	cout << "\tChar: " << charisma << " " << stats->getModifierSign(charismaMod) << charismaMod << endl;
 
 	Race characterRace = Race();
 
