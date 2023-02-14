@@ -10,6 +10,11 @@ https://www.udemy.com/user/johnpbaugh/
 
 -----------
 
+Update 1.12: 2023-02-14
+
+Implemented the use of smart pointers to reduce the 'overhead' of the program.
+
+
 Update 1.11: 2023-02-13
 
 Updated existing code to add more functionality.
