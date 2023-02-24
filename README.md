@@ -10,6 +10,11 @@ https://www.udemy.com/user/johnpbaugh/
 
 -----------
 
+Update 1.13: 2023-02-24
+
+Implemented the feature of selecting a species for the randomly generated character.
+
+
 Update 1.12: 2023-02-14
 
 Implemented the use of smart pointers to reduce the 'overhead' of the program.
