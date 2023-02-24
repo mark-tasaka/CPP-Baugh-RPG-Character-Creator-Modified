@@ -38,7 +38,8 @@ int main()
 
 	int nameChoice;
 	int raceNum;
-	string playerName;
+	string characterName;
+	string species;
 
 	int strength = 0;
 	int strengthMod = 0;
@@ -64,11 +65,11 @@ int main()
 
 	cout << "Please enter a name for your character." << endl;
 
-	getline(cin, playerName);
+	getline(cin, characterName);
 
 	cout << endl;
 
-	cout << "Your character's name is " << playerName << ". Are you statisfied with your character's names?  Press 1 if you would like to re-enter your character's name, or another integer if you want to keep the name." << endl;
+	cout << "Your character's name is " << characterName << ". Are you statisfied with your character's names?  Press 1 if you would like to re-enter your character's name, or another integer if you want to keep the name." << endl;
 
 	cin >> nameChoice;
 	cin.get(); //consume newline
@@ -85,9 +86,9 @@ int main()
 	{
 		cout << "Please enter a name for your character." << endl;
 
-		getline(cin, playerName);
+		getline(cin, characterName);
 
-		cout << "Your character's name is " << playerName << ".  Press 1 if you would like to re-enter your character's name, or another integer if you want to keep the name." << endl;
+		cout << "Your character's name is " << characterName << ".  Press 1 if you would like to re-enter your character's name, or another integer if you want to keep the name." << endl;
 
 		cin >> nameChoice;
 		cin.get(); //consume newline
@@ -103,7 +104,7 @@ int main()
 
 	cout << endl;
 
-	cout << "Now that you have selected your character's name (" << playerName << "), the next step is the generate ability scores for your character." << endl;
+	cout << "Now that you have selected your character's name (" << characterName << "), the next step is the generate ability scores for your character." << endl;
 
 	cout << "Please select which ability score generation method you would like to use." << endl << endl;
 
@@ -193,7 +194,7 @@ int main()
 		charismaMod = stats->getCharismaMod(abilityScores);
 
 
-		cout << playerName << "'s ability scores are: " << endl << endl;
+		cout << characterName << "'s ability scores are: " << endl << endl;
 		cout << "Strength: " << strength << " " << stats->getModifierSign(strengthMod) << strengthMod << endl;
 		cout << "Dexterity: " << dexterity << " " << stats->getModifierSign(dexterityMod) << dexterityMod << endl;
 		cout << "Constitution: " << constitution << " " << stats->getModifierSign(constitutionMod) << constitutionMod << endl;
@@ -221,7 +222,7 @@ int main()
 
 	cout << endl;
 
-	cout << playerName << "'s ability scores are: " << endl << endl;
+	cout << characterName << "'s ability scores are: " << endl << endl;
 	cout << "\tStr: " << strength << " " << stats->getModifierSign(strengthMod) << strengthMod << endl;
 	cout << "\tDex: " << dexterity << " " << stats->getModifierSign(dexterityMod) << dexterityMod << endl;
 	cout << "\tCon: " << constitution << " " << stats->getModifierSign(constitutionMod) << constitutionMod << endl;
@@ -232,6 +233,30 @@ int main()
 	Race characterRace = Race();
 
 	characterRace.raceDescription();
+
+	cin >> raceChoice;
+	cin.get(); //consume newline
+	cout << endl;
+
+	while (!cin.good())
+	{
+		cin.clear();
+		cin.ignore();
+
+		cout << "Please enter an integer value.  Please choose either 1 (Human), 2 (Dwarf), 3 (Elf), or 4 (Halfling)." << endl << endl;
+	}
+
+	while (raceChoice < 1 && raceChoice > 4)
+	{
+		cout << "Integer out of range.  Please choose either 1 (Human), 2 (Dwarf), 3 (Elf), or 4 (Halfling)." << endl << endl;
+
+		cin >> dieRoll;
+		cin.get(); //consume newline
+	}
+
+	species = characterRace.getRace(raceChoice);
+
+	cout << "You have choosen " << species << " for " << characterName << "." << endl;
 
 
 
